@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Birthday ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loading screen -->
+<div id="loader"><div class="beat">💖</div><p>Wait kro, kuch special aa rha hai...</p></div>
+
+<!-- Background layers: stars, floating hearts, fireworks canvas -->
+<div id="sky"></div>
+<div id="hearts"></div>
+<canvas id="fx"></canvas>
+
+<!-- Progress bar, music button, page navigation -->
+<div id="progress"></div>
+<button id="music" aria-label="Play or pause music">🎵</button>
+<nav id="nav" hidden>
+  <button data-go="0" title="Countdown">1</button>
+  <button data-go="1" title="Memories">2</button>
+  <button data-go="2" title="Our story">3</button>
+  <button data-go="3" title="Letter">4</button>
+</nav>
+
+<!-- PAGE 1: Countdown + gate + celebration -->
+<section class="page active" id="p0">
+  <div id="waiting">
+    <h1>Ye lo apna letter jo mangte the hmse </h1>
+    <p class="sub">Paper pr ni aise lo my special <span class="name"></span> ❤️</p>
+    <div class="cd glass">
+      <div><b id="d">00</b><span>days</span></div>
+      <div><b id="h">00</b><span>hours</span></div>
+      <div><b id="m">00</b><span>minutes</span></div>
+      <div><b id="s">00</b><span>seconds</span></div>
+    </div>
+    <p class="small">Intajar ni ho rha kya tumse.</p>
+  </div>
+
+  <!-- Gate: she must type the phrase from script.js (CONFIG.gatePhrase) -->
+  <div id="gate" hidden>
+    <h1 id="gateMsg"></h1>
+    <form id="gateForm" autocomplete="off">
+      <input id="gateInput" type="text" placeholder="Yaha likho sahi tabhi khulega..." autocapitalize="off" autocorrect="off">
+      <button class="btn" type="submit">Send 💌</button>
+    </form>
+    <p class="small" id="gateWrong" hidden></p>
+  </div>
+
+  <div id="party" hidden>
+    <h1 class="glow">Happy Birthday <span class="name"></span>!</h1>
+    <p class="sub">✨ 💖 ✨ 💗 ✨</p>
+    <button class="btn" id="openBtn">Kholo Isko But Kiss Do phle</button>
+  </div>
+</section>
+
+<!-- PAGE 2: Photo gallery -->
+<section class="page" id="p1">
+  <h2>Dekhoo Accha lge to smile krna Please...</h2>
+  <p class="sub">Some moments are unforgettable, and some people make every moment special and these images are from those special moments that you have given me. Itna english pdhne k baad to smile kr do.</p>
+  <div class="gallery" id="gallery"></div>
+  <button class="btn ghost" id="secretBtn">Ye Padho click kr k 💌</button>
+  <p class="glass secret" id="secret" hidden></p>
+  <br><button class="btn" data-go="2">letter chaiye to TAP kr lo</button>
+</section>
+
+<!-- PAGE 3: Timeline -->
+<section class="page" id="p2">
+  <h2>Control control itna jldi letter ni milega</h2>
+  <h2>Dekho ye or yaad kro Date batna puchenge hmm</h2>
+  <div class="timeline" id="timeline"></div>
+  <button class="btn" data-go="3">Letter</button>
+</section>
+
+<!-- PAGE 4: Envelope + letter -->
+<section class="page" id="p3">
+  <h2>A Special Letter for my special <span class="name"></span> ❤️</h2>
+  <p class="small" id="hint">Tap the heart seal to open</p>
+  <div class="envwrap" id="env">
+    <div class="back"></div>
+    <div class="paper"></div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <button class="seal" id="seal" aria-label="Open letter">❤</button>
+  </div>
+  <article class="letter" id="letter">
+    <!-- Your personal message is filled in from CONFIG.letter in script.js -->
+    <p id="letterText"></p>
+    <p><b>Happy Birthday, IAS Nudrat Malika!</b></p>
+    <p>May your days always be filled with happiness, your dreams turn into reality, and your life be full of beautiful moments.</p>
+    <p>You deserve all the wonderful things this world has to offer.</p>
+    <p>Yr bhut din se soch rha tha tumko letter likhunga but smjh ni aata kya likhu kaise likhu kabhi likha ni hu n isiliye </p>
+    <p>Tum n best ho ekdum best or tumhara smile tumse v best yr tum mujhe bhut psnd ho bhut jyda or wo v pta n kab itna psnd aa gye smjh hi ni aaya starting me to nirmally start hua phir yr tumse jo pyar hua abhi words me to describe ni kr skta mai  </p>
+    <p>You are vesy special to me bhut jyda chlo tumhre bare me kuch apne fellings btate h </p>
+    <p>Pta  h tumko jab tumko mai dekhta hu n smile krte hue mann krta h bss dekhte rhh jauu itni accha feel hota h, tumse jhgra krne ka to bilkul v mnn nii hota bilkul v nii but pta n kaise ho jata h but jab jhra k baad baat n ho to itna mnn khrab ho jata h ki kuch accha hii ni lgta.</p>
+    <p>Choro wo sb din tumhara h or accha se enjoy kro </p>
+    <p>Tum best ho or tum bhut accha bhut kuch achive kroge bss hard work kro acche abhi to utna ni kr rhe ho or jyda krna h tumko and i belive in you kitum kr loge or ha tum kr loge.</p>
+    <p>Wishing you all the best and happiest birthday again my love.</p>
+    <p>With love, always. ❤️</p>
+    <div class="bigheart">💖</div>
+    <button class="btn" id="replay">Phirse Dekhna hai to dekh lo yha click kr k</button>
+  </article>
+</section>
+
+<!-- Lightbox for photos -->
+<div id="lightbox" hidden><figure><img alt=""><figcaption></figcaption></figure></div>
+
+<audio id="audio" loop preload="none"></audio>
+<script src="script.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@ const CONFIG = {
   name: "Fiza",
   // Local time of the device viewing the page. Format: YYYY-MM-DDTHH:MM:SS
   // (Set to "2026-11-10T00:00:00" for the real midnight surprise)
-  birthday: "2026-11-09T20:56:00",
+  birthday: "2026-11-10T00:00:00",
   music: "music/romantic.mp3",
   secret: "I Miss you a lot mtlb bhut jyda mill lo n jaldi. ❤️",
   letter: " ",
